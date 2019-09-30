@@ -11,13 +11,11 @@ describe('Turn', () => {
 
   it('should be a function', () => {
     let turn = new Turn();
-    let card = new Card();
     expect(Turn).to.be.a('function');
   });
 
   it('should be an instance of Turn', () => {
     let turn = new Turn();
-    let card = new Card();
     expect(turn).to.be.an.instanceof(Turn);
   });
 
