@@ -21,6 +21,5 @@ describe('Turn', () => {
     expect(turn).to.be.an.instanceof(Turn);
   });
 
-  it('should')
 
 })
