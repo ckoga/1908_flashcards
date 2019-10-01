@@ -32,4 +32,4 @@ describe('Deck', () => {
     expect(deck.countCards()).to.equal(3)
   });
   
-})
+});
