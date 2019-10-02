@@ -13,6 +13,7 @@ class Turn {
   }
 
   evaluateGuess() {
+    // console.log(this.card.correctAnswer)
    if (this.userGuess === this.card.correctAnswer) {
      return true
    } else {
