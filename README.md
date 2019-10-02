@@ -1,8 +1,8 @@
-# FlashCards Starter Kit
+# FlashCards
 
 ## Abstract
 
-Flashcards is a project designed to help students get comfortable working with multiple files.  By using 12 files we are getting used OOP and TDD.  Following the data from file to file helps to highlight the imprtance of TDD and OOP.  
+Flashcards is a project designed to strengthen the Test Driven Development process.  It helps to highlight the importance of writing tests first to reduce bugs and maintain SRP code.  One really important aspect is making sure the code/tests I wrote works correctly with the already existing code in the starter kit.  Using mocha and chai for this project allowed me to get a better handle on assertion statements and the syntax for using expect.  
 
 ## GIF
 
