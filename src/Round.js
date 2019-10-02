@@ -23,6 +23,16 @@ class Round {
 
 
     return turn.giveFeedback();
+  };
+
+  calculatePercentCorrect() {
+    let num = Math.round(this.incorrectGuesses.length / this.deck.cards.length * 100)
+
+    return 100 - num;
+  };
+
+  endRound() {
+    return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
   }
 }
 
