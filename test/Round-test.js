@@ -4,6 +4,7 @@ const expect = chai.expect;
 const Round = require('../src/Round');
 const Card = require('../src/Card');
 const Deck = require('../src/Deck');
+const Turn = require('../src/Turn');
 
 
 
@@ -17,6 +18,7 @@ describe('Round', () => {
     card3 = new Card(3, 'What type of prototype method directly modifies the existing array?', ['mutator method', 'accessor method', 'iteration method'], 'mutator method');
     deck = new Deck([card1, card2, card3])
     round = new Round(deck);
+    turn = new Turn()
   })
 
   it('should be a function', () => {
@@ -27,7 +29,7 @@ describe('Round', () => {
     expect(round).to.be.an.instanceof(Round);
   });
 
-  it('should be return the curent card', () => {
+  it('should return the curent card', () => {
     expect(round.returnCurrentCard()).to.eql(card1)
   });
 
@@ -40,16 +42,30 @@ describe('Round', () => {
   });
 
   it('should update the current card', () => {
-    round.returnCurrentCard()
+    round.returnCurrentCard();
     expect(round.currentCard).to.equal(card1);
     expect(round.currentTurn).to.equal(0);
-    round.takeTurn();
+    round.takeTurn('object');    
+    round.returnCurrentCard();
     expect(round.currentCard).to.equal(card2);
     expect(round.currentTurn).to.equal(1);
-    round.takeTurn();
+    round.takeTurn('array');
+    round.returnCurrentCard();
     expect(round.currentCard).to.equal(card3);
     expect(round.currentTurn).to.equal(2);
   });
 
-  
+  it('should keep track of incorrect guesses', () => {
+    round.returnCurrentCard()
+    expect(round.currentCard).to.equal(card1);
+    expect(round.currentTurn).to.equal(0);
+    round.takeTurn('array')
+    expect(round.incorrectGuesses).to.have.lengthOf(1)
+  });
+
+  it('should return a string telling the user the results', () => {
+    expect(round.takeTurn('object')).to.equal('correct!')
+  });
+
+
 })
