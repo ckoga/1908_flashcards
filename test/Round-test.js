@@ -75,10 +75,10 @@ describe('Round', () => {
     expect(round.calculatePercentCorrect()).to.equal(33)
   });
 
-  it('should return a string at the end of the round', () => {
+  it('should console log a string at the end of the round', () => {
     round.takeTurn('object');
     round.takeTurn('object');
     round.takeTurn('object');
-    expect(round.endRound()).to.equal('** Round over! ** You answered 33% of the questions correctly!')
+    round.endRound();
   });
 });
