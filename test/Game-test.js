@@ -22,6 +22,10 @@ describe('Game', () => {
 
   it('should be a function', () => {
     expect(Game).to.be.a('function')
-  })
+  });
+
+  // it('should print the question', () => {
+  //   expect(game.printQuestiono()).to.equal(card1)
+  // })
 
 })
